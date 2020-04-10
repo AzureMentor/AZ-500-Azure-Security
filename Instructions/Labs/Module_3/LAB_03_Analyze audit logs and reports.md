@@ -6,10 +6,10 @@
 
 ### Task 0: Lab Setup
 
-1.  Open **PowerShell** and run the following command to deploy a database for the lab.
+1.  In your browser, navigate to the following URL to open the ARM template:
 
-     ```powershell
-    start "https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoftLearning%2FAZ-500-Azure-Security%2Fmaster%2FAllfiles%2FLabs%2FMod3_Lab03%2Fazuredeploy.json" 
+    ```cli
+    https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoftLearning%2FAZ-500-Azure-Security%2Fmaster%2FAllfiles%2FLabs%2FMod3_Lab03%2Fazuredeploy.json
      ```
 
 1.  Under **Resource group** click create new and use the default name "**Mod3Lab3**"
@@ -66,12 +66,14 @@ warning
 
 1.  **Enter** the following **Powerhshell Commands**.
 
+***Note*** Replace the section **{GlobalUniqueName}** with a globally unique name
+
      ```powershell
-    New-AzEventHubNamespace -ResourceGroupName Mod3Lab3  -NamespaceName Mod3Lab3 -Location eastus
+    New-AzEventHubNamespace -ResourceGroupName Mod3Lab3  -NamespaceName {GlobalUniqueName} -Location eastus
      ```
 
      ```powershell
-    New-AzEventHub -ResourceGroupName Mod3Lab3 -NamespaceName Mod3Lab3  -EventHubName Mod3Lab3 -MessageRetentionInDays 3
+    New-AzEventHub -ResourceGroupName Mod3Lab3 -NamespaceName {GlobalUniqueName}  -EventHubName Mod3Lab3 -MessageRetentionInDays 3
      ```
 
 1.  When these commands have completed click **configure under event hubs**
